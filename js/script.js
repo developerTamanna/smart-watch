@@ -1,5 +1,6 @@
 const ringButtons = document.querySelectorAll('.ring-button');
 // console.log(ringButtons)
+ let productImageBase = '/images/';
 for(let i =0; i< ringButtons.length; i++){
     // console.log(ringButtons[i]);
     const ringBtn = ringButtons[i];
@@ -19,7 +20,7 @@ for(let i =0; i< ringButtons.length; i++){
     const productImage = document.getElementById('product-image');
     // console.log(productImage);
     // productImage.src = "../images/teal.png"
-    productImage.src = '/images/' + color + '.png';
+    productImage.src = productImageBase + color + '.png';
     });
 
 
@@ -108,4 +109,30 @@ document.getElementById('add-to-cart').addEventListener('click', function(){
         alert('please select a quantity')
     }
   
+})
+
+
+// next cart modal
+
+document.getElementById('checkout-btn').addEventListener('click', function(){
+     
+    const cartModal =document.getElementById('cart-modal');
+     const cartContainer = document.getElementById('cart-items');
+     for(let i =0 ; i<cartItems.length; i++){
+
+        // console.log(cartItems[i]);
+        const item = cartItems[i];
+        const row = document.createElement('tr');
+        row.classList.add('border-b');
+        row.innerHTML= `
+         <td>
+         <div class = 'flex items-center space-x-2'>
+         <img class="h-12 w-12 object-cover rounded-md" src="${productImageBase}${item.image}" alt="">
+         <span class="font-semibold">${item.title}</span>
+         </div>
+         </td>
+        `
+        cartContainer.appendChild(row);
+     }
+    cartModal.classList.remove('hidden')
 })
