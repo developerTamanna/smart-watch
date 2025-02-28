@@ -64,3 +64,48 @@ for(let btn of  quantityButtons){
         quantityElement.innerText = newQuantity;
     })
 }
+
+
+
+// add to card
+let cartCount = 0;
+let cartItems = [];
+document.getElementById('add-to-cart').addEventListener('click', function(){
+    // console.log('ad to card')
+   
+    
+    const quantity = parseInt(document.getElementById('quantity').innerText);
+    cartCount = cartCount + quantity;
+    if(quantity > 0){
+        const checkOutContainer = document.getElementById('checkout-container');
+        // console.log(checkOutContainer);
+        checkOutContainer.classList.remove('hidden');
+        document.getElementById('cart-count').innerText = cartCount;
+        
+        const selectedColorBtn = document.querySelector('button.border-purple-600.w-6');
+        // console.log(selectedColorButton)
+        const selectColor = selectedColorBtn.id.split('-')[0];
+        // console.log(selectColor);
+        const selectSizeButtons = document.querySelector('button.border-purple-600:not(.w-6)');
+        // console.log(selectSizeButtons)
+        // console.log(selectSizeButtons.innerText)
+        const selectSize = selectSizeButtons.innerText.split(' ')[0];
+        // console.log(selectSize)
+        const selectPrice = selectSizeButtons.innerText.split(' ')[1].split('$')[1];
+        // console.log(selectPrice);
+    
+        cartItems.push({
+            image: selectColor + '.png',
+            title: "Classy modern smart watch",
+            color: selectColor,
+            size: selectSize,
+            price: quantity * parseInt(selectPrice)
+        });
+        console.log(cartItems);
+
+    }
+    else{
+        alert('please select a quantity')
+    }
+  
+})
