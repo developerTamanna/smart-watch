@@ -19,7 +19,7 @@ for(let i =0; i< ringButtons.length; i++){
     const productImage = document.getElementById('product-image');
     // console.log(productImage);
     // productImage.src = "../images/teal.png"
-    productImage.src = 'images/' + color + '.png';
+    productImage.src = '/images/' + color + '.png';
     });
 
 
@@ -44,4 +44,13 @@ for(let i = 0; i<sizes.length; i++ ){
         button.classList.remove('border-purple-600')
     }
 }
+}
+
+
+const quantityElement = document.querySelectorAll('.quantity-button');
+for(let btn of quantityElement){
+    // console.log(btn);
+    btn.addEventListener('click', function(){
+        // console.log('clicked')
+    })
 }
