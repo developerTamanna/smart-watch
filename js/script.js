@@ -47,10 +47,20 @@ for(let i = 0; i<sizes.length; i++ ){
 }
 
 
-const quantityElement = document.querySelectorAll('.quantity-button');
-for(let btn of quantityElement){
+const  quantityButtons = document.querySelectorAll('.quantity-button');
+for(let btn of  quantityButtons){
     // console.log(btn);
-    btn.addEventListener('click', function(){
+
+    btn.addEventListener('click', function(event){
+        const amount = event.target.innerText === "+" ? 1 : -1;
+        // console.log(amount)
         // console.log('clicked')
+        const quantityElement =document.getElementById('quantity');
+        // console.log(quantity)
+        const currentQuantity = parseInt(quantityElement.innerText);
+        // console.log(currentQuantity)
+        const newQuantity = Math.max(0,currentQuantity+amount)
+        // console.log(newQuantity)
+        quantityElement.innerText = newQuantity;
     })
 }
