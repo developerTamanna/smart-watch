@@ -142,3 +142,17 @@ document.getElementById('checkout-btn').addEventListener('click', function(){
      }
     cartModal.classList.remove('hidden')
 })
+
+
+// next continue-shopping part
+document.getElementById('continue-shopping').addEventListener('click', function(){
+    document.getElementById('cart-modal').classList.add('hidden')
+})
+
+
+// checkout part
+
+document.getElementById('checkout').addEventListener('click', function(){
+    alert('consmic-jelly-of076.netify.app says\n\nProceeding to checkout');
+});
+
