@@ -25,3 +25,23 @@ for(let i =0; i< ringButtons.length; i++){
 
 
 }
+
+
+function selectWristSize(size){
+//    console.log(size);
+const sizes = ['S', 'M', 'L', 'XL'];
+for(let i = 0; i<sizes.length; i++ ){
+    const button = document.getElementById('size-' + sizes[i])
+    // size-S, size-M, size-L, size-xl
+    // console.log(button)
+    const element = sizes[i];
+    // console.log(element)
+    if(size === element){
+        // console.log('condition match')
+        button.classList.add('border-purple-600');
+    }
+    else{
+        button.classList.remove('border-purple-600')
+    }
+}
+}
