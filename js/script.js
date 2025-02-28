@@ -100,6 +100,7 @@ document.getElementById('add-to-cart').addEventListener('click', function(){
             title: "Classy modern smart watch",
             color: selectColor,
             size: selectSize,
+            quantity: quantity, 
             price: quantity * parseInt(selectPrice)
         });
         console.log(cartItems);
@@ -125,12 +126,17 @@ document.getElementById('checkout-btn').addEventListener('click', function(){
         const row = document.createElement('tr');
         row.classList.add('border-b');
         row.innerHTML= `
-         <td>
+         <td class="py-2 px-4">
          <div class = 'flex items-center space-x-2'>
          <img class="h-12 w-12 object-cover rounded-md" src="${productImageBase}${item.image}" alt="">
          <span class="font-semibold">${item.title}</span>
          </div>
          </td>
+         <td class="py-2 px-4">${item.color}</td>
+         <td class="py-2 px-4">${item.size}</td>
+         <td class="py-2 px-4">${item.quantity}</td>
+         <td class="py-2 px-4">${item.price}</td>
+         
         `
         cartContainer.appendChild(row);
      }
