@@ -1,6 +1,6 @@
 const ringButtons = document.querySelectorAll('.ring-button');
 // console.log(ringButtons)
- let productImageBase = '/images/';
+ let productImageBase = './images/';
 for(let i =0; i< ringButtons.length; i++){
     // console.log(ringButtons[i]);
     const ringBtn = ringButtons[i];
@@ -153,6 +153,6 @@ document.getElementById('continue-shopping').addEventListener('click', function(
 // checkout part
 
 document.getElementById('checkout').addEventListener('click', function(){
-    alert('consmic-jelly-of076.netify.app says\n\nProceeding to checkout');
+    alert('Proceeding to checkout');
 });
 
